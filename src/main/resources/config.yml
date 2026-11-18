@@ -1,0 +1,45 @@
+# ============ BSNLink ============
+# One copy of this plugin runs on EACH server (smp / practice / boxpvp), each with its own api-key.
+
+# Your website address, without a trailing slash.
+api-url: "https://bsn-site.YOUR-ACCOUNT.workers.dev"
+
+# This server's secret key. Create it in the admin panel: "ربط السيرفرات" tab.
+api-key: "PASTE_KEY_HERE"
+
+# How often to check for approved orders (seconds).
+poll-seconds: 10
+# How often to tell the site this server is online + player count (seconds).
+heartbeat-seconds: 60
+# How often to send the stats of online players (seconds). Higher = fewer database writes.
+stats-seconds: 300
+
+# Deliver an order only while the buyer is online (recommended: most give/crate commands need it).
+# If false, commands run even when he is offline (works for things like LuckPerms).
+require-online: true
+
+# Message sent to the buyer in game after delivery ('' = none). Use & for colors.
+deliver-message: "&aYour BSN store order has been delivered. Thank you!"
+
+# SAFETY: the plugin only runs commands whose first word is in this list.
+# Add the commands your products use. Everything else is refused, even if the website asks for it.
+allowed-commands:
+  - give
+  - lp
+  - luckperms
+  - eco
+  - crate
+  - crates
+  - points
+  - playerpoints
+  - say
+
+# ---- Player stats shown on the website (PlaceholderAPI) ----
+# Put any PlaceholderAPI placeholder that gives a number. Leave a line empty to skip it.
+# Tip: use the plain number placeholder (e.g. %vault_eco_balance%), not the "_formatted" one.
+# Each server can use different placeholders (e.g. BoxPvP kills from its own plugin).
+stats:
+  money: "%vault_eco_balance%"
+  kills: "%statistic_player_kills%"
+  deaths: "%statistic_deaths%"
+  shards: "%playerpoints_points%"

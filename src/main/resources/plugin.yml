@@ -1,0 +1,16 @@
+name: BSNLink
+version: 1.0.0
+main: net.bsn.link.BsnLink
+api-version: '1.13'
+author: BSN
+description: Connects the server to the BSN website - store delivery, live player count and player stats.
+depend: [PlaceholderAPI]
+commands:
+  bsnlink:
+    description: BSN website link
+    usage: /bsnlink <reload|test>
+    permission: bsnlink.admin
+permissions:
+  bsnlink.admin:
+    description: Manage the BSN link
+    default: op
